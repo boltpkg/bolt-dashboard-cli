@@ -1,0 +1,66 @@
+{
+  "name": "bolt-dashboard",
+  "version": "0.0.0",
+  "main": "index.js",
+  "author": "James Kyle <me@thejameskyle.com>",
+  "license": "MIT",
+  "repository": "https://github.com/boltpkg/bolt-dashboard",
+  "bin": {
+    "bolt": "./bin.js"
+  },
+  "files": [
+    "dist",
+    "index.js",
+    "bin.js"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "flow": "flow status",
+    "test": "jest --coverage",
+    "format": "prettier --write src/**/*.js",
+    "build:legacy": "BABEL_ENV=legacy babel src -d dist/legacy",
+    "build:modern": "BABEL_ENV=modern babel src -d dist/modern",
+    "build": "yarn run clean && yarn build:legacy && yarn build:modern",
+    "dev": "yarn run clean && run-p \"build:legacy --watch\" \"build:modern --watch\"",
+    "prepublish": "yarn build",
+    "precommit": "lint-staged"
+  },
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "cross-spawn": "^5.1.0",
+    "react": "0.14",
+    "react-blessed": "^0.1.8"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.9.0",
+    "flow-bin": "^0.57.3",
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "lint-staged": "^4.3.0",
+    "nodemon": "^1.12.1",
+    "npm-run-all": "^4.1.1",
+    "prettier": "^1.7.4"
+  },
+  "jest": {
+    "resetMocks": true,
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/*.js"
+    ]
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true
+  }
+}
