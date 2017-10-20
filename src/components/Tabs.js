@@ -32,10 +32,7 @@ const stylesheet = {
     width: 20,
     height: 3,
     bg: '#222',
-    fg: 'white',
-    border: {
-      ch: '⚡️'
-    }
+    fg: 'white'
   },
   activeTab: {
     bold: true,

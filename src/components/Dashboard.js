@@ -17,11 +17,7 @@ function lines(str, length) {
 }
 
 const stylesheet = {
-  dashboard: {
-    border: {
-      ch: '⚡️'
-    }
-  }
+  dashboard: {}
 };
 
 export default function Dashboard(props: Props) {

@@ -7,10 +7,7 @@ const stylesheet = {
     top: 1,
     left: 2,
     right: 2,
-    bottom: 1,
-    border: {
-      ch: '⚡️'
-    }
+    bottom: 1
   },
   title: {
     top: -1,
@@ -30,7 +27,7 @@ const stylesheet = {
     input: true,
     alwaysScroll: true,
     scrollbar: {
-      ch: '⚡️',
+      ch: ' ',
       inverse: true
     }
   }

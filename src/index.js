@@ -8,7 +8,7 @@ import Process from './util/Process';
 const processesConfig = [
   {
     command: 'yarn',
-    args: ['babel', 'src', '-d', 'lib', '--watch', '--color']
+    args: ['babel', 'src', '-d', 'dist', '--watch', '--color']
   },
   {
     command: 'yarn',
